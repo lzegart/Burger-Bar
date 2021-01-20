@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(173, 55, 247);
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(247, 239, 14);
+}
+
+img {
+    width: 350px;
+    height: 350px;
+}
+
+.row {
+    text-align: center;
+    padding: 50px;
+}
