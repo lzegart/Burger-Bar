@@ -3,14 +3,17 @@ const burger = require('../models/burger');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    burger.selectAll((data) => {
-      const hbsObject = {
-        burgers: data,
-      };
-      console.log(hbsObject);
-      res.render('index', hbsObject);
-    });
-  });
+  res.redirect("/burgers")  
+});
+
+router.get("/burgers", (req, res) => {
+  res.send("stuff")
+  // burger.selectAll((burgerData) => {
+  //   console.log(burgerData)
+  //   res.send("stuff")
+    //res.render("index", {burger_data: burgerData})
+  // })
+})
   
   router.post('/api/burgers', (req, res) => {
     burger.insertOne(['burger_name'], [req.body.burger_name], (result) => {
