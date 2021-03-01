@@ -7,12 +7,20 @@ router.get('/', (req, res) => {
 });
 
 router.get("/burgers", (req, res) => {
-  res.send("stuff")
-  // burger.selectAll((burgerData) => {
-  //   console.log(burgerData)
+  // burger.selectAll((data) => {
+    // const hbsObject = {
+    //   bugers: data,
+    // };
+    // console.log(hbsObject);
+    // res.render('index', hbsObject);
+  
+  // res.send("stuff")
+   burger.selectAll((burgerData) => {
+     console.log(burgerData)
   //   res.send("stuff")
-    //res.render("index", {burger_data: burgerData})
+     res.render("index", {burger_data: burgerData})
   // })
+  });
 })
   
   router.post('/api/burgers', (req, res) => {

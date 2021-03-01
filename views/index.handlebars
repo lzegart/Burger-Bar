@@ -1,13 +1,13 @@
 <div class="jumbotron text-center">
     <h1>Burger Bar</h1>
-    {{!-- <img src="assets/images/burger-img.png" alt="burger-img" > --}}
+    {{!-- <img src="assets/images/burger-img.png" alt="burger-img"> --}}
 </div>
 
 <div class="row">
     <div class="col-md-6">
         <h2>Burgers</h2>
         <ul id="burgersList">
-            {{#each burgers}}
+            {{#each burger_data}}
             {{#unless devoured}}
             <li>
                 {{burger_name}}
@@ -20,7 +20,7 @@
     <div class="col-md-6">
         <h2>Devoured Burgers</h2>
         <ul id="devouredList">
-            {{#each burgers}}
+            {{#each burger_data}}
             {{#if devoured}}
             <li>
                 {{burger_name}}
