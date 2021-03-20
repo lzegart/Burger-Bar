@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //        // do some logic here
     //     }
     //  })
-    const createBurgerBtn = document.getElementById('create-burger');
+    const createBurgerBtn = document.getElementById('create-form');
 
     if (createBurgerBtn) {
         createBurgerBtn.addEventListener('submit', (e) => {
@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             const newBurger = {
                 burger_name: document.getElementById('burger-input').value.trim(),
-                devoured: document.getElementById('false').checked,
+                // devoured: document.getElementById('false').checked,
+                devoured: false,
             };
 
             fetch('/api/burgers', {
