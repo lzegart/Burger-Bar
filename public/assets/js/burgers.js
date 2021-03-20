@@ -45,31 +45,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 const id = e.target.getAttribute('data-id');
                 const devoured = e.target.getAttribute('data-devoured');
 
-                const burgerState = {
-                    devoured: true,
-                };
-
-                fetch(`/api/burgers/${id}`, {
-                    method: 'PUT',
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                    },
-
-                    body: JSON.stringify(burgerState),
-                }).then((response) => {
-                    // Reload the page so the user can see the changes
-                    if (response.ok) {
-                        location.reload('/');
-                    } else {
-                        alert('Something went wrong...');
-                    }
-                });
-            });
-        });
         //*/
     }
-
+    // document.getElementById("container-list").addEventListener("click", function(e){
+    //     if (e.target.matches(".btn-func")) {
+    //        // do some logic here
+    //     }
+    //  })
     const createBurgerBtn = document.getElementById('create-burger');
 
     if (createBurgerBtn) {
