@@ -36,21 +36,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 });
             }
         });
-
-        /*
-        devourBtn.forEach((button) => {
-            console.log("aaa...")
-            button.addEventListener('click', (e) => {
-                console.log("clicked", e.target)
-                const id = e.target.getAttribute('data-id');
-                const devoured = e.target.getAttribute('data-devoured');
-
-        //*/
     }
     
     const createBurgerBtn = document.getElementById('create-form');
 
     if (createBurgerBtn) {
+
         createBurgerBtn.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -77,4 +68,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         });
     };
-});    
+
+    const devouredList = document.querySelector("#devouredList");
+
+    if (devouredList) {
+
+        devouredList.addEventListener("click", function(e){
+            if (e.target.matches(".origBtn")) {
+                const id = e.target.getAttribute('data-id');
+                const devoured = e.target.getAttribute('data-original');
+                const burgerState = {
+                    devoured: false,
+                };
+                fetch(`/api/burgers/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(burgerState),
+                }).then((response) => {
+                    // Reload the page so the user can see the changes
+                    if (response.ok) {
+                        location.reload('/');
+                    } else {
+                        alert('Something went wrong...');
+                    }
+                });
+            }
+        });
+    };
+});
