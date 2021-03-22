@@ -47,11 +47,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         //*/
     }
-    // document.getElementById("container-list").addEventListener("click", function(e){
-    //     if (e.target.matches(".btn-func")) {
-    //        // do some logic here
-    //     }
-    //  })
+    
     const createBurgerBtn = document.getElementById('create-form');
 
     if (createBurgerBtn) {
