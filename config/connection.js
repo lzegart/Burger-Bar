@@ -14,13 +14,13 @@ if (process.env.JAWSDB_URL) {
 }
 connection.connect(); 
 
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  port: 3306,
-  database: 'burgers_db',
-});
+// const connection = mysql.createConnection({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASS,
+//   port: 3306,
+//   database: 'burgers_db',
+// });
 
 connection.connect((err) => {
   if (err) {
